@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import pixel.academy.crud_app.dao.StudentDAO;
+import pixel.academy.crud_app.entity.Student;
 
 @SpringBootApplication
 public class CrudAppApplication {
@@ -23,10 +24,15 @@ public class CrudAppApplication {
 	private void createStudent(StudentDAO studentDAO) {
 
 		// create object Student
+		System.out.println("Creating new student object ...");
+		Student newStudent = new Student("John", "Doe", "john@pixelacademy.md");
 
 		// save object Student in DB using DAO
+		System.out.println("Saving the student ...");
+		studentDAO.save(newStudent);
 
 		// display ID of saved student
+		System.out.println("Saved student. Generated id: " + newStudent.getId());
 	}
 
 }
