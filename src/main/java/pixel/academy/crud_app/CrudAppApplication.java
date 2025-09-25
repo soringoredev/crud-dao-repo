@@ -41,8 +41,8 @@ public class CrudAppApplication {
 		// create more students
 		System.out.println("Creating 3 student object ...");
 		Student newStudent1 = new Student("Andrei", "Munteanu", "andrei@pixelacademy.md");
-		Student newStudent2 = new Student("Iulian", "Vataman", "iulic@pixelacademy.md");
-		Student newStudent3 = new Student("Maria", "Mirabela", "mira@pixelacademy.md");
+		Student newStudent2 = new Student("Iulian", "Vataman" , "iulic@pixelacademy.md");
+		Student newStudent3 = new Student("Maria" , "Mirabela", "mira@pixelacademy.md");
 
 		// save objects student in database
 		System.out.println("Saving the students ...");
