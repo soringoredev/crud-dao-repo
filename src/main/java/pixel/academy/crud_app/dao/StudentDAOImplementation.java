@@ -10,17 +10,22 @@ import pixel.academy.crud_app.entity.Student;
 public class StudentDAOImplementation implements StudentDAO {
 
     // field for EntityManage(will be used to interact with db)
-    private EntityManager entitymanager;
+    private EntityManager entityManager;
 
     // inject EntityManager with constructor
     @Autowired
     public StudentDAOImplementation(EntityManager entityManager) {
-        this.entitymanager = entityManager;
+        this.entityManager = entityManager;
     }
 
     @Override
     @Transactional
     public void save(Student theStudent) {
-        entitymanager.persist(theStudent);
+        entityManager.persist(theStudent);
+    }
+
+    @Override
+    public Student findById(Integer id) {
+        return entityManager.find(Student.class, id);
     }
 }
