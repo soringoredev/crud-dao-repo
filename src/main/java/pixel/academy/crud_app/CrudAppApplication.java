@@ -26,14 +26,23 @@ public class CrudAppApplication {
 	private void readStudent(StudentDAO studentDAO) {
 
 		// create an object of type Student
+		System.out.println("Creating new student object ...");
+		Student newStudent = new Student("Mircea", "Popescu", "mirceap@pixel.academy");
 
 		// save the student in database
+		System.out.println("Saving the student ...");
+		studentDAO.save(newStudent);
 
 		// display the id of saved student
+		int theId = newStudent.getId();
+		System.out.println("Saved student. Generated id: " + theId);
 
 		// get student by Id (Primary Key)
+		System.out.println("Retrieving student with id: " + theId);
+		Student myStudent = studentDAO.findById(theId);
 
 		// display details of the student
+		System.out.println("Found the student: " + myStudent);
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
