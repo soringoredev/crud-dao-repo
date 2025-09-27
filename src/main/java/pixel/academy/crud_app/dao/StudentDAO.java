@@ -11,7 +11,7 @@ public interface StudentDAO {
 
     List<Student> findAll();
 
-    List<Student> findNyLastName(String theLastName);
+    List<Student> findByLastName(String theLastName);
 
     void update(Student theStudent);
 
