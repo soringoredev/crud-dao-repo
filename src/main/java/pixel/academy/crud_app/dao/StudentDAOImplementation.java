@@ -39,4 +39,16 @@ public class StudentDAOImplementation implements StudentDAO {
 
         return theQuery.getResultList();
     }
+
+    @Override
+    public List<Student> findNyLastName(String theLastName) {
+
+        // creare query
+
+        // setarea parametrilor
+
+        // returnarea rezultatelor query
+
+        return null;
+    }
 }
