@@ -103,13 +103,19 @@ public class CrudAppApplication {
 	private void updateStudent(StudentDAO studentDAO) {
 
 		// find student in bd using the id(PK)
+		int studentId = 1;
+		System.out.println("Getting student with id: " + studentId);
+		Student newStudent = studentDAO.findById(studentId);
 
 		// modify firstName of the student "Ion"
+		System.out.println("Updating student ...");
+		newStudent.setFirstName("Ion");
 
 		// save modified data in bd
+		studentDAO.update(newStudent);
 
 		// display details of the updated student
-
+		System.out.println("Updated student: " + newStudent);
 	}
 
 
