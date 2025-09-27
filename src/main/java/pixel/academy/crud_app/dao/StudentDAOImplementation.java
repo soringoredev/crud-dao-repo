@@ -44,11 +44,12 @@ public class StudentDAOImplementation implements StudentDAO {
     public List<Student> findNyLastName(String theLastName) {
 
         // creare query
+        TypedQuery<Student> theQuery = entityManager.createQuery("FROM Student WHERE lastName=:theData", Student.class);
 
         // setarea parametrilor
+        theQuery.setParameter("theData", theLastName);
 
         // returnarea rezultatelor query
-
-        return null;
+        return theQuery.getResultList();
     }
 }
