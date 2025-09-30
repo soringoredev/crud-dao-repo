@@ -75,6 +75,6 @@ public class StudentDAOImplementation implements StudentDAO {
     public int deleteAll() {
 
         int numRowsDeleted = entityManager.createQuery("DELETE FROM Student").executeUpdate();
-        return 0;
+        return numRowsDeleted;
     }
 }
